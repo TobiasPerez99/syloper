@@ -17,7 +17,7 @@ class PostsFactory extends Factory
         return [
             'titulo' => $this->faker->text(45),
             'slug' => Str::slug($this->faker->text(15)),
-            'description' => $this->faker->text(900),
+            'descripcion' => $this->faker->text(900),
         ];
     }
 }
