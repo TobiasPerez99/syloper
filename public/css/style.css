@@ -1,0 +1,11 @@
+.header-bg{
+    background-color: var(--syloper-green);
+}
+.search-box{
+    display: flex;
+    justify-content: center;    
+}
+
+.post-title{
+    text-decoration: none;
+}
