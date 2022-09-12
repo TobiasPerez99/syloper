@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SearchPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,17 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', [PostController::class, 'index'])->name('home');
-Route::view('/contact', 'contact')->name('contact');
+
+Route::view('/contact', 'pages.contact')->name('contact');
+
+// Route::post('search' , [SearchPostController::class, 'buscar'])->name('buscarPost');
+
+Route::post('contact', [ContactController::class , 'store'])->name('sendEmail');
 
 Route::resource('posts', PostController::class)->names('post');
+
+Route::post('/search', [SearchPostController::class , '__invoke'])->name('front.search');
+
+Auth::routes();
+
+Route::get('/home', [PostController::class, 'index'])->name('home');
