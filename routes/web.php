@@ -18,11 +18,11 @@ use App\Http\Controllers\SearchPostController;
 
 Route::get('/', [PostController::class, 'index'])->name('home');
 
-Route::view('/contact', 'pages.contact')->name('contact');
 
-// Route::post('search' , [SearchPostController::class, 'buscar'])->name('buscarPost');
+Route::post('send-form', [ContactController::class , 'send'])->name('sendEmail');
+Route::get('contact', [ContactController::class, 'form'])->name('contact.form');
 
-Route::post('contact', [ContactController::class , 'store'])->name('sendEmail');
+
 
 Route::resource('posts', PostController::class)->names('post');
 

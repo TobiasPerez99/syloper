@@ -8,11 +8,8 @@
 
                 <ul class="nav col-12 p-2 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="{{ route('home') }}" class="nav-link px-2 text-white">HOME</a></li>
-                    <li><a href="{{ route('contact') }}" class="nav-link px-2 text-white">CONTACT</a></li>
+                    <li><a href="{{ route('contact.form') }}" class="nav-link px-2 text-white">CONTACT</a></li>
                 </ul>
-
-
-
                 <div class="text-end">
 
                     @if (!Auth::check())
@@ -28,8 +25,6 @@
                             </button>
                         </a>
                     @endif
-
-
                     @if (Auth::check())
                         
                                     <a class="dropdown-item" href="{{ route('logout') }}"

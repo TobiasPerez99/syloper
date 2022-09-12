@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Spatie\Searchable\Search;
 use Spatie\Searchable\Searchable;
 use Spatie\Searchable\SearchResult;
 use Illuminate\Database\Eloquent\Model;
