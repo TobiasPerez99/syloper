@@ -1,28 +1,34 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.default')
+@section('content')
 
-    <a class="btn btn-primary m-3" href="{{ route('post.edit' , $post->slug) }}" role="button">Editar Proyecto</a>
+    @if (Auth::check())
+        <form action="{{ route('post.destroy', $post) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-primary m-3">
+                Eliminar
+            </button>
 
-                <form action="{{ route('post.destroy' , $post) }}" method="post">
-                    @csrf
-                    @method('DELETE')
-
-                    <button type="submit" class=" m-3 btn btn-danger">Eliminar</button>
-
-                </form>
+            <a class="btn btn-primary m-3" href="{{ route('post.edit', $post) }}" role="button">Editar Proyecto</a>
+        </form>
+    @endif
 
 
-    <hr>
+    <div class="row mt-5">
+        <div class="col-md-12 border d-flex flex-wrap justify-content-center flex-column align-items-center">
 
-        <h1>{{ $post->titulo }}</h1>
-        <h3>{{ $post->descripcion }}</h3>
-        <h4>{{ $post->created_at }}</h4>
+            <div class="post-title">
+                <h1>{{ $post->titulo }}</h1>
+            </div>
 
-</body>
-</html>
+            <div class="post-description m-4">
+                <h3>{{ $post->descripcion }}</h3>
+            </div>
+
+            <div class="created-date">
+                <h4>{{ $post->created_at }}</h4>
+            </div>
+        </div>
+
+    </div>
+@stop
