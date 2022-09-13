@@ -50,7 +50,6 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-
         $post = new Post;
 
         if ($request->hasFile('imagen')) {

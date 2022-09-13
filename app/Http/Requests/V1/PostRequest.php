@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\V1;
 
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PostRequest extends FormRequest
