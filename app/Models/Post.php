@@ -11,7 +11,7 @@ class Post extends Model implements Searchable
 {
     use HasFactory;
 
-    protected $fillable = ['titulo' , 'descripcion' , 'slug'];
+    protected $fillable = ['titulo' , 'descripcion' , 'slug' , 'imagen'];
     protected $table = "posts";
 
     public $searchableType = 'post';

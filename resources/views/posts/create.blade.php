@@ -16,24 +16,37 @@
         <Form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
-            @include('includes._form-post')
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" name="titulo" id="form6Example1"
+                            class="form-control" />
+                        <label class="form-label" for="form6Example1">Titulo Post</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" name="slug" id="form6Example2"
+                            class="form-control" />
+                        <label class="form-label" for="form6Example2">Slug / Url</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-outline mb-4">
+                <input type="file" id="form6Example4" name="imagen" class="form-control" />
+                <label class="form-label" for="form6Example4">Suba una imagen</label>
+            </div>
+
+
+            <div class="form-outline mb-4">
+                <textarea class="form-control" id="form6Example7" name="descripcion" rows="4"></textarea>
+                <label class="form-label" for="form6Example7">Descripcion del Post</label>
+            </div>
 
             <button type="submit" class="btn btn-primary btn-block mb-4">Crear Post</button>
         </form>
-
-        {{-- <label for="">Titulo :</label>
-            <input type="text" name="titulo" value="{{ old('title') }}">            
-
-            <label for="">Slug :</label>
-            <input type="text" name="slug" value="{{ old('slug') }}">
-
-            <label for="">Descripcion : </label>
-            <input type="text" name="descripcion" value="{{ old('descripcion') }}">
-
-            <label for="">Inserte una Imagen </label>
-            <input type="file" name="imagen" id="imagen">
-
-            <button type="submit">Crear Post</button> --}}
 
         </Form>
 
