@@ -14,7 +14,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['index', 'show', 'store' , 'delete']]);
+        $this->middleware('auth:api', ['except' => ['index', 'show', 'store' ,'destroy']]);
     }
 
     /**
