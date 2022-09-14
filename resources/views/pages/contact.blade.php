@@ -1,6 +1,12 @@
 @extends('layouts.default')
 @section('content')
+
+
+
     <div class="container border-3 flex justify-content-center">
+
+        @include('includes.session-status')
+
         <div class="row justify-content-center m-5 align-items-center g-2">
             <div class="col-md-8 bg-light">
                 <div class="form">
