@@ -14,7 +14,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['index', 'show', 'store' ,'destroy']]);
+        $this->middleware('auth:api', ['except' => ['index', 'show', 'store', 'destroy']]);
     }
 
     /**
@@ -95,5 +95,14 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+
+        $post = Post::find($post)->first();
+        if (is_null($post)) {
+            return response()->json('Registro no encontrado', 404);
+        }
+
+        $post->delete();
+        return response()->json(['El post fue eliminado exitosamente.']);
+
     }
 }
