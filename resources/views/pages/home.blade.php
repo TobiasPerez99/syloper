@@ -36,11 +36,16 @@
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-sm-4 position-relative">
-                        {{-- <img src="https://via.placeholder.com/350x200" width="350" class="card-img fit-cover w-100 h-100"
-                            alt="{{ $item->name }}"> --}}
-                            
-                            <img src="{{ Storage::url($item->imagen) }}" height="75" width="75" class="card-img fit-cover w-100 h-100"
-                            alt="{{ $item->name }}">
+                            @if ($item->imagen)
+
+                                <img src="{{ Storage::url($item->imagen) }}" width="75" class="card-img fit-cover w-100 h-100" alt="{{ $item->name }}">
+
+                            @else
+
+                                <img src="https://via.placeholder.com/350x200" width="350" class="card-img fit-cover w-100 h-100" alt="{{ $item->name }}">
+
+                            @endif
+
                     </div>
 
                     <div class="col-sm-8">

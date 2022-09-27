@@ -18,11 +18,13 @@
 
         <div class="col-md-12 border d-flex flex-wrap justify-content-center flex-column align-items-center">
 
-            <img src="../storage/{{ $post->imagen }}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
-
             <div class="post-title">
                 <h1>{{ $post->titulo }}</h1>
             </div>
+
+            @if ($post->imagen)
+                <img src="{{ Storage::url($post->imagen) }}" class="img-fluid ${3|rounded-top,rounded-rigrounded-bottom,rounded-left,rounded-circle,|}" alt="">
+            @endif
 
             <div class="post-description m-4">
                 <h3>{{ $post->descripcion }}</h3>

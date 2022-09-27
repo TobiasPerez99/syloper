@@ -29,6 +29,7 @@ class ContactController extends Controller
 
         Mail::to('contacto@laravel.com')->send(new ContactEmail($data));
 
-        return back()->with('data', $data)->with('message', ['success', 'Mensaje Enviado Correctamente']);
+        return redirect()->route('contact.form')->with('contact', 'El Correo fue enviado');
+    
     }
 }

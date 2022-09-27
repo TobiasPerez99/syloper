@@ -29,7 +29,7 @@ class PostRequest extends FormRequest
         return [
             'titulo' => 'required',
             'descripcion' => 'required',
-            'slug' => 'required | unique:posts',
+            'slug' => 'required|unique:posts',
         ];
     }
 
@@ -38,7 +38,7 @@ class PostRequest extends FormRequest
         return [
             'titulo.required' => 'El Titulo es Requerido',
             'slug.required' => 'El slug es Requerido',
-            'slug.unique' => 'El slug debe ser unico',
+            'slug.unique' => 'El slug no se  Debe Repetir',
             'descripcion.required' => 'La Descripcion es Requerida',
         ];
     }
