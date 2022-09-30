@@ -10,7 +10,7 @@ use Spatie\Searchable\ModelSearchAspect;
 
 class SearchPostController extends Controller
 {
-    public function __invoke(Request $request)
+    public function search(Request $request)
     {
 
         $searchterm = $request->input('search');

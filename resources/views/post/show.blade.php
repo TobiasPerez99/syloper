@@ -1,19 +1,6 @@
 @extends('layouts.default')
 @section('content')
 
-    @if (Auth::check())
-        <form action="{{ route('post.destroy', $post) }}" method="post">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-primary m-3">
-                Eliminar
-            </button>
-
-            <a class="btn btn-primary m-3" href="{{ route('post.edit', $post) }}" role="button">Editar Proyecto</a>
-        </form>
-    @endif
-
-
     <div class="row mt-5">
 
         <div class="col-md-12 border d-flex flex-wrap justify-content-center flex-column align-items-center">

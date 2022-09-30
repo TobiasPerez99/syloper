@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('index', 'show');
+        $this->middleware('auth')->except('show');
     }
 
 
@@ -23,12 +23,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::paginate(15);
-
-        return view('pages.home')->with('post', $post);
+        $post = Post::all();
+        return view('post.index')->with('post', $post);        
     }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -37,9 +34,7 @@ class PostController extends Controller
      */
     public function create(Request $request)
     {
-        return view('posts.create', [
-            'post' => new Post,
-        ]);
+        return view('post.create');
     }
 
     /**
@@ -55,13 +50,12 @@ class PostController extends Controller
         if ($request->hasFile('imagen')) {
 
             $path = $request->file('imagen')->store('public/images');
-
+            $post->imagen = $path;
         }
 
         $post->titulo = $request->input('titulo');
         $post->slug = $request->input('slug');
-        $post->descripcion = $request->input('descripcion');
-        $post->imagen = $path;
+        $post->descripcion = $request->input('descripcion');        
         $status = $post->save();
 
         if ($status) {
@@ -77,7 +71,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('posts.show', ['post' => $post]);
+        return view('post.show', ['post' => $post]);
     }
 
     /**
@@ -88,7 +82,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('posts.edit', ['post' => $post]);
+        return view('post.edit', ['post' => $post]);
     }
 
     /**
@@ -103,7 +97,7 @@ class PostController extends Controller
 
         $request->validate([
             'titulo' => 'required',
-            'descripcion' => 'required',
+            'descripcion' => 'required',            
         ]);
 
 

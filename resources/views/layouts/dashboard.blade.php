@@ -32,9 +32,11 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                     {{-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                     </div>
+                     </div> --}}
+
+                     @include('includes.session-status')
 
                      @yield('content')
 
@@ -60,24 +62,25 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>    
-    
-
+        
     <!-- Bootstrap core JavaScript-->
-    <script src="assets_dashboard/vendor/jquery/jquery.min.js"></script>
-    <script src="assets_dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src=""></script> --}}
+    
+    <script src="{{ asset('assets_dashboard/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets_dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="assets_dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{ asset('assets_dashboard/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="assets_dashboard/js/sb-admin-2.min.js"></script>
+    <script src="{{ asset('assets_dashboard/js/sb-admin-2.min.js') }}"></script>
 
     <!-- Page level plugins -->
-    <script src="assets_dashboard/vendor/chart.js/Chart.min.js"></script>
+    <script src="{{ asset('assets_dashboard/vendor/chart.js/Chart.min.js')}}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="assets_dashboard/js/demo/chart-area-demo.js"></script>
-    <script src="assets_dashboard/js/demo/chart-pie-demo.js"></script>
+    <script src="{{asset ('assets_dashboard/js/demo/chart-area-demo.js"')}}></script>
+    <script src="{{ asset ('assets_dashboard/js/demo/chart-pie-demo.js')}}"></script>
 
 </body>
 

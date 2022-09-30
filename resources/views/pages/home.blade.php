@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    @if (Auth::check())
+    {{-- @if (Auth::check())
         <div class="row text-center search-box">
             <div class="col-md-">
                 <div class="form-group">
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-    @endif
+    @endif --}}
 
 
     @include('includes.session-status')
@@ -52,6 +52,7 @@
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a class="link-dark text-decoration-none" href="{{ route('post.show', $item) }}"
+                                {{-- <a class="link-dark text-decoration-none" href="#" --}}
                                     target="_blank">{{ $item->titulo }}
                                 </a>
                                 <small> | {{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</small>
