@@ -25,5 +25,10 @@ class Post extends Model implements Searchable
     {
         return new SearchResult($this, $this->titulo, route('post.show', $this->slug));
     }
+
+    public function countPost(){
+        $total_post = count(Post::all());
+        return $total_post;
+    }
  
 }
